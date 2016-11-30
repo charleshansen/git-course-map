@@ -1,26 +1,26 @@
 import React from 'react'
 import node from '../node'
 
-const root = node('foo', 0, [
-  node('bar', 1),
-  node('gaz', 2, [
-    node('leaf1', 3),
-    node('leaf2', 4),
+const root = node('ryan', [
+  node('lianne'),
+  node('amy', [
+    node('gary'),
+    node('bob'),
   ]),
-  node('urk', 5, [
-    node('leaf3', 6, [
-      node('leaf4', 7),
-      node('leaf5', 8),
-      node('leaf6', 9)
+  node('sue'),
+  node('penny', [
+    node('fiona', [
+      node('drew'),
+      node('chris'),
+      node('tanya')
     ]),
-    node('leaf7', 10)
+    node('alex')
   ])
 ])
 
 export default () => (
   <div>
-    <pre>{root.toString()}</pre>
-    <svg height="350" width="500" style={{backgroundColor: 'orange'}}>
+    <svg height="300" width="200" style={{backgroundColor: 'orange'}}>
       {root.paintOnSvg()}
     </svg>
   </div>
