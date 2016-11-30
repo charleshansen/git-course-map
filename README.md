@@ -1,12 +1,25 @@
-# git-course-map
+# git-js-svg-tree
 
-Course map for Georgia Tech's OMSCS
+## DSL
 
-## Installation
+```js
+const root = node('foo', 0, [
+  node('bar', 1),
+  node('gaz', 2, [
+    node('leaf1', 3),
+    node('leaf2', 4),
+  ]),
+  node('urk', 5, [
+    node('leaf3', 6, [
+      node('leaf4', 7),
+      node('leaf5', 8),
+      node('leaf6', 9)
+    ]),
+    node('leaf7', 10)
+  ])
+])
+```
 
-1. Install node 4+ (should incl. npm)
-1. `npm install`
+Outputs:
 
-## Running
-
-1. `bin/run.sh`
+(tba)
