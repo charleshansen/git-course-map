@@ -35,14 +35,24 @@ class Node {
     const childrenSvg = this.children
       .map(c => c.paintOnSvg(xOffset + 1, c.childNumber))
 
-    const x = xOffset * 30
-    const y = yOffset * 30
+    const size = 30
+    const x = xOffset * size
+    const y = yOffset * size
+    let dropLine = null
+
+    if (this.children.length > 0) {
+      const dropLineHeight = size * (this.children[this.children.length - 1].childNumber - this.childNumber)
+      dropLine = <line x1={x + size / 4} y1={y + size / 2} x2={x + size / 4} y2={y + dropLineHeight + (size / 4) + (size / 8)}
+                       style={{stroke: 'black', strokeWidth: size / 4}}/>
+    }
 
     return (
       <g key={Math.random()}>
-        <Square size="15" x={x} y={y}/>
-        <text x={x + 20} y={y + 15}>{this.name}</text>
+        <line x1={x - size + (size / 4)} y1={y + size / 4} x2={x} y2={y + size / 4} style={{stroke: 'black', strokeWidth: size / 4}}/>
+        <Square size={size / 2} x={x} y={y}/>
+        <text x={x + 2 * size / 3} y={y + size / 2}>{this.name}</text>
         {childrenSvg}
+        {dropLine}
       </g>
     )
   }

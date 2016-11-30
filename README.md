@@ -3,6 +3,9 @@
 ## DSL
 
 ```js
+import React from 'react'
+import node from '../node'
+
 const root = node('foo', 0, [
   node('bar', 1),
   node('gaz', 2, [
@@ -18,8 +21,17 @@ const root = node('foo', 0, [
     node('leaf7', 10)
   ])
 ])
+
+export default () => (
+  <div>
+    <pre>{root.toString()}</pre>
+    <svg height="350" width="500" style={{backgroundColor: 'orange'}}>
+      {root.paintOnSvg()}
+    </svg>
+  </div>
+)
 ```
 
-Outputs:
+Produces:
 
-(tba)
+![output](./example.png "Output")
