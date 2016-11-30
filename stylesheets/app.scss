@@ -1,26 +1,3 @@
-@import './reset';
-@import './variables';
-@import './header';
-@import './course';
-
-#app, #foreword {
-  padding: 10px;
-}
-
-#app {
-  display: flex;
-}
-
-#courses, #specializations {
-  flex: 1;
-}
-
-.inset {
-  padding-left: 30px;
-}
-
-.more {
-  padding-left: 10px;
-  cursor: pointer;
-  color: darkgrey;
+body {
+  background-color: mintcream;
 }
