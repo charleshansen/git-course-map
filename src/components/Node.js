@@ -46,18 +46,14 @@ const childrenBlocks = (children, xOffset) => {
     })
 }
 
-const Node = ({subject, xOffset = 0, yOffset = 0}) => {
-  const y = 25 * yOffset
-
-  return (
-    <g key={Math.random()} transform={`translate(${xOffset === 0 ? 0 : 25},${y})`}>
-      <Square size="15"/>
-      <text x="20" y="12.5">{subject.name}</text>
-      {childrenHorizontalLine(subject)}
-      {childrenVerticalLines(subject.children)}
-      {childrenBlocks(subject.children, xOffset)}
-    </g>
-  )
-}
+const Node = ({subject, xOffset = 0, yOffset = 0}) => (
+  <g key={Math.random()} transform={`translate(${xOffset === 0 ? 0 : 25},${25 * yOffset})`}>
+    <Square size="15"/>
+    <text x="20" y="12.5">{subject.name}</text>
+    {childrenHorizontalLine(subject)}
+    {childrenVerticalLines(subject.children)}
+    {childrenBlocks(subject.children, xOffset)}
+  </g>
+)
 
 export default Node
