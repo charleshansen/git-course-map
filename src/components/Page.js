@@ -1,5 +1,6 @@
 import React from 'react'
 import node from '../node'
+import Node from './Node'
 
 const root = node('ryan', [
   node('lianne'),
@@ -21,7 +22,7 @@ const root = node('ryan', [
 export default () => (
   <div>
     <svg height="300" width="200" style={{backgroundColor: 'orange'}}>
-      {root.paintOnSvg()}
+      <Node subject={root} />
     </svg>
   </div>
 )
