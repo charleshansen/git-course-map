@@ -1,6 +1,8 @@
 var express = require('express')
 var app = express()
 
+console.log(`Environment variable FOO=${process.env['FOO']}`)
+
 app.use('/dist', express.static('dist'))
 app.get('/', function (req, res) {
   res.sendFile('index.html', {root: __dirname});
